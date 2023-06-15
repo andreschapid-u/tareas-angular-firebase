@@ -1,0 +1,7 @@
+{
+  "*": {
+    "target": "https://firestore.googleapis.com/google.firestore.v1.Firestore/",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

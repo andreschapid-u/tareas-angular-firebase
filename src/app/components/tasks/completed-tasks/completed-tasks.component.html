@@ -1,0 +1,56 @@
+<div class="bg-green-200 panel">
+  <h1 class="p-panel-title" >TAREAS COMPLETADAS</h1>
+  <p-divider align="center">
+  </p-divider>
+  <p-progressSpinner *ngIf="cargando"></p-progressSpinner>
+  <ul class="bg-green-50" style="text-decoration: none">
+      <app-task *ngFor="let task of tasks" [task]="task"
+          [showCompleted]="true" [classState]="['bg-green-400', 'm-1']"
+          (deleteTaskEmiter)="deleteCompletedTask(task.id)"
+          (toPendingTaskEmiter)="undoCompletedTask(task.id, task)"
+          (showTasksEmiter)="viewTask(task)"
+      ></app-task>
+
+  </ul>
+  <p *ngIf="tasks?.length == 0">No hay tareas completadas!</p>
+</div>
+<p-dialog header="Detalle de la tarea" [(visible)]="displayDialog" [modal]="true" [responsive]="true"
+          [style]="{minWidth: '500px'}">
+  <div class="p-panel">
+    <div class="p-field flex justify-content-center">
+      <div class="col-4">
+        <label class="flex-1">Título:</label>
+      </div>
+      <div class="col-8 flex justify-content-start">
+        <label class="flex-2"><strong>{{task.title}}</strong></label>
+      </div>
+    </div>
+    <div class="p-field flex justify-content-center">
+      <div class="col-4">
+        <p class="flex-1">Descripción:</p>
+      </div>
+      <div class="col-8 flex justify-content-start">
+        <label class="flex-2"><strong>{{task.description}}</strong></label>
+      </div>
+    </div>
+    <div class="p-field flex justify-content-center">
+      <div class="col-4">
+        <label class="flex-1">Fecha de creación:</label>
+      </div>
+      <div class="col-8 flex justify-content-start">
+        <label class="flex-2"><strong>{{task.created_at | date: 'dd/MM/yyyy'}}</strong></label>
+      </div>
+    </div>
+    <div class="p-field flex justify-content-center">
+      <div class="col-4">
+        <label class="flex-1">Fecha de actualización:</label>
+      </div>
+      <div class="col-8 flex justify-content-start">
+        <label class="flex-2"><strong>{{task.updated_at | date: 'dd/MM/yyyy'}}</strong></label>
+      </div>
+    </div>
+  </div>
+  <p-footer class="flex justify-content-center">
+    <button type="button" pButton icon="pi pi-times" label="cerrar" (click)="cerrarDialog()"></button>
+  </p-footer>
+</p-dialog>

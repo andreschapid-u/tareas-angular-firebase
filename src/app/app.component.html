@@ -1,0 +1,10 @@
+<p-toast></p-toast>
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+  <div class="flex justify-content-center m-2">
+    <div class="text-blue-600 font-bold mb-3 m-auto">Elaborado por:
+      <a href="https://github.com/andreschapid-u" target="_blank" class="text-blue-600 font-bold"><i class="pi pi-github"></i>&nbsp; Andres Chapid</a>
+    </div>
+    <button *ngIf="isLoged()" pButton pRipple label="LOGOUT" (click)="logout()" icon="pi pi-angle-left" class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap m-auto"></button>
+  </div>
+<router-outlet class="flex justify-content-center"></router-outlet>
+</div>

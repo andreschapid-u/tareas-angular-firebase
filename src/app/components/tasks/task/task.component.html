@@ -1,0 +1,22 @@
+<li>
+  <div [ngClass]="classState" >
+    <h3 (click)="toggleActions()" style="cursor: pointer" >{{task.title.toUpperCase()}}</h3>
+    <div *ngIf="showActions">
+      <p-divider align="center">
+      </p-divider>
+      <!--<a *ngIf="!showCompleted" (click)="editTask()" >Edit  |  </a>
+      <a *ngIf="!showCompleted" (click)="completedTask()" >Completed  |  </a>
+      <a *ngIf="showCompleted" (click)="undoCompletedTask()" >Undo  |</a>
+      <a (click)="deleteTask()" >Delete  |  </a>
+      <a (click)="showMoreTasks()" >Details</a>-->
+
+      <div class="flex flex-wrap gap-3 justify-content-center sm:pb-1">
+        <p-button label="Editar" (onClick)="editTask()" styleClass="p-button-rounded sm:p-2 flex-1" *ngIf="false"></p-button>
+        <p-button label="Completar" (onClick)="completedTask()" styleClass="p-button-rounded p-button-success sm:p-2 flex-1" *ngIf="!showCompleted"></p-button>
+        <p-button label="Pendiente" (onClick)="undoCompletedTask()" styleClass="p-button-rounded p-button-warning sm:p-2 flex-1" *ngIf="showCompleted"></p-button>
+        <p-button label="Ver más..."  (onClick)="showDetailsTask()"   styleClass="p-button-rounded p-button-help sm:p-2 flex-1"></p-button>
+        <p-button label="Eliminar" (onClick)="deleteTask()" styleClass="p-button-rounded p-button-danger sm:p-2 flex-1"></p-button>
+      </div>
+    </div>
+  </div>
+</li>

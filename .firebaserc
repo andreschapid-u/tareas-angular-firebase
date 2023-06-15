@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "microproyecto-angular": {
+      "hosting": {
+        "angularfirebase": [
+          "microproyecto-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "microproyecto-angular"
+  }
+}

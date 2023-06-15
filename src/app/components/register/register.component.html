@@ -1,0 +1,24 @@
+<div class="container w-full flex justify-content-center align-items-center">
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+        <div class="text-center mb-5">
+            <div class="text-900 text-3xl font-medium mb-3">Crear Cuenta</div>
+            <a href="login" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Iniciar Sesión</a>
+        </div>
+
+        <div>
+          <label for="nombre" class="block text-900 font-medium mb-2">Nombre</label>
+          <input id="nombre" name="email" type="text"  [(ngModel)]="registerUser.displayName" pInputText class="w-full mb-3">
+
+            <label for="email" class="block text-900 font-medium mb-2">Correo</label>
+            <input id="email" name="email" type="text"  [(ngModel)]="registerUser.email" pInputText class="w-full mb-3">
+
+            <label for="password1" class="block text-900 font-medium mb-2">Password</label>
+            <input id="password1" name="password" [(ngModel)]="registerUser.password" type="password" pInputText class="w-full mb-3">
+
+
+            <button (click)="register(registerUser)" pButton pRipple label="Crear" icon="pi pi-user" class="w-full"></button>
+        </div>
+    </div>
+</div>
+
+
